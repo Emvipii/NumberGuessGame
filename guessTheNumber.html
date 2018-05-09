@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess The Number</title>
+<style type="text/css">
+	body{
+		
+		background-image: url(https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5drdVAhCvq6roLRJaagBy2XLQWJQeH_1680x8400);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		min-height: 100vh;
+	}
+	button{
+		display: block;
+		margin: 0 auto;
+		padding: 2em;
+		font-size: 2em;
+		border-radius: 5%
+
+	}
+	h1{
+		text-align:center;
+	}
+	p{
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<h1>Guess the Number Game</h1>
+	<p>The rules are self-explanatory.</p>
+	<button onclick=gamestart()>Start!</button>
+	<script type="text/javascript">
+	function gamestart(){
+ var score = {computer: 0, player: 0}
+while(userNumber !="stop"){
+var randomNumber = Math.floor(Math.random() * 5)
+var userNumber = prompt("Guess a number between 0 and 5. Type 'stop' to stop.")
+if (userNumber == "stop"){break}
+if (randomNumber == userNumber){alert("You got it!")
+score.player += 3}
+else {alert("Fail, the number was "+randomNumber)
+score.computer += 1}}
+document.body.innerHTML = ""
+document.write(`<h1>Your score is ${score.player}, The cpu's score is ${score.computer}</h1>`)	
+document.write(`<button onclick=gamestart()>Play Again!</button>`)	
+}	
+
+</script>
+</body>
+</html>
